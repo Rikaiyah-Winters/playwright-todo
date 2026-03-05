@@ -3,7 +3,6 @@ Test Cases
 Add:
 -- write a todo list item and make sure it's in 'active' ✅
 
-
 Filter:
 -- mark item out as completed Make sure completed item is in the 'completed' tab ✅
 -- go to 'completed' page and ensure that all there are completed 
@@ -19,5 +18,4 @@ Edit:
 -- clear completed ✅
 
 -- check the little 'x item left' in the lower left side to make sure its accurate 🟡
-
 -- local storage resistance test (whatever that means)

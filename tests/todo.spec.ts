@@ -77,17 +77,11 @@ test.describe("ToDo MVC UI Tests", () => {
         await page.getByTestId("text-input").press("Enter");
         await page.getByTestId("text-input").fill("three");
         await page.getByTestId("text-input").press("Enter");
-
         await page.getByRole("listitem").filter({ hasText: "two" }).getByTestId("todo-item-toggle").click();
-
-        //make sure that it has the complete class on all tab
         await expect(page.getByRole("listitem").filter({ hasText: "two" })).toHaveClass("completed");
-        //make sure that it is located in the complete tab with the completed class
         await page.getByRole("link", { name: "Completed" }).click()
         await expect(page.getByRole("listitem").filter({ hasText: "two" })).toHaveClass("completed");
-        //click the clear completed button
         await page.getByRole("button", { name: "Clear completed" }).click()
-        //make sure that it is not located in either the all or completed tabs
         await page.getByRole("link", { name: "All" }).click()
         await expect(page.getByRole("listitem").filter({ hasText: "two" })).not.toBeVisible();
         await page.getByRole("link", { name: "Completed" }).click()
